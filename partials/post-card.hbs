@@ -1,0 +1,54 @@
+{{!-- <div  id="post next-post" class="{{post_class}} next-case col-xs-12" style="background-image: url({{img_url feature_image}});text-align:center;justify-content:center; margin:auto;position:relative">
+  <a href="{{url absolute="true"}}" class="next-case-overlay">
+  </a>
+  <div style="margin:auto!important" class="col-md-12">
+    <div class="col">
+      <div>
+        <p style="color:#1f1f1f; line-height:1.5rem; margin-bottom:0px; color:white; position:relative" class="labels-post no-padding">
+          NEXT CASE STUDY
+        </p>
+        <a class="post-link" style="color:white; margin-top: 2rem;">
+          {{{title}}}
+        </a>
+      </div>
+      <p class="post-excerpt" style="max-width:600px;margin:auto; color:white; position:relative;padding:1rem">
+        {{excerpt words="30"}}&hellip;
+      </p>
+      <div class="flex-adapt" style="justify-content:center">
+        <button class="btn-rtc-container btn-rtc" style="position:relative;color:white;opacity:1!important">
+            <svg width="34" height="15" viewBox="0 0 58 27" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path class="arrow-path" d="M2.732 11.756h47.71l-7.72-7.778c-.678-.68-.678-1.786 0-2.467.675-.68 1.772-.68 2.447 0l10.676 10.757c.676.68.676 1.785 0 2.466L45.17 25.49c-.34.34-.782.51-1.225.51-.443 0-.886-.17-1.224-.51-.676-.682-.676-1.787 0-2.467l7.72-7.78H2.733C1.775 15.244 1 14.464 1 13.5c0-.963.775-1.744 1.732-1.744z" stroke="rgba(50, 56, 82, 0.89)" fill-rule="nonzero" stroke-width="2" fill="#ECE3D8" style="opacity:1!important">
+            </svg>
+          </button>
+      </div>
+    </div>
+  </div>
+</div> --}}
+
+<div id="next-study" class="{{post_class}} col-xs-12 col-sm-8  ">
+  <div>
+    <div>
+      <p style="color:#ece3d8; line-height:1.5rem; text-align:center; margin:4rem; position:relative" class="labels-post">
+        NEXT CASE STUDY
+      </p>
+    </div>
+    <div class="col-md-12 clip-bg">
+      <div class="gridBG" href="{{url}}" style="background-size:cover; height:25rem; max-height:800px; background-image:url({{img_url feature_image}})">
+        <a href="{{url absolute="true"}}"></a>
+      </div>
+    </div>
+    <div style="margin-top:2rem" class="col-md-12">
+      <div class="col" style="text-align:center">
+        {{tag}}
+        <a class="post-link" style="color:#ece3d8; letter-spacing:1px;" href="{{url absolute="true"}}">{{{title}}}</a>
+        <div class="flex-adapt" style="justify-content:center">
+          <button style="color:#ece3d8" class="btn-rtc-container btn-rtc">
+            READ MORE
+            <svg width="34" height="15" viewBox="0 0 58 27" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path class="arrow-path" d="M2.732 11.756h47.71l-7.72-7.778c-.678-.68-.678-1.786 0-2.467.675-.68 1.772-.68 2.447 0l10.676 10.757c.676.68.676 1.785 0 2.466L45.17 25.49c-.34.34-.782.51-1.225.51-.443 0-.886-.17-1.224-.51-.676-.682-.676-1.787 0-2.467l7.72-7.78H2.733C1.775 15.244 1 14.464 1 13.5c0-.963.775-1.744 1.732-1.744z" stroke="#FFF" fill-rule="nonzero" stroke-width="2" fill="#1F1F1F"/>
+          </svg>
+        </button>
+        </div>
+        {{!-- <p><a class="post-more" href="{{url absolute="true"}}">Read More <i class="icon-arrow-right"></i></a></p> --}}
+      </div>
+    </div>
+  </div>
+</div>
