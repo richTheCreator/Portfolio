@@ -1070,6 +1070,7 @@ Usage (In Ghost editor):
     -webkit-clip-path: inset(15px 15px);
     clip-path: inset(15px 15px);
   }
+
   #next-study .arrow-path {
     fill: #ECE3D8;
     stroke: #323852;
@@ -1092,7 +1093,6 @@ Usage (In Ghost editor):
   .next-case:hover {
     transform: background-size(120%)
   }*/
-
   /*.case-study-wrapper {
     text-align: center;
     justify-content: center;
@@ -1200,13 +1200,43 @@ Usage (In Ghost editor):
   /*CONTACT STYLES*/
 
   .container-contact {
-    position: relative;
+    background-color: #F2F2F2;
+    padding: 0px;
+    color: #323852
+  }
+
+  .container-contact .form-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .container-contact input, textarea {
+    min-height: 2rem;
+    display: block;
+    background-color: white;
+    padding-left: 1rem;
+    margin: 0;
+    border: .2rem solid transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    font-size: 1rem!important;
+    line-height: 1.5rem!important;
+    padding-top: 6px;
+    padding-bottom: 6px;
     width: 100%;
-    height: 100%;
-    background-image: url(../images/black-polygon-BG.jpg);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover
+    font-family: "Muli";
+    font-weight: inherit;
+    color: #323232;
+    outline: .1rem solid #e2e2e2;
+    outline-offset: 0;
+    position: relative;
+    transition: border-color .12s cubic-bezier(.555, .205, .295, .975), outline-color .12s cubic-bezier(.555, .205, .295, .975);
+  }
+
+  .container-contact input[type=email]:focus, input[type=text]:focus, textarea:focus {
+    border-color: #2c2c2c;
+    outline-color: #2c2c2c;
   }
 
   .wrapper-contact, .vertical-Card {
@@ -1300,6 +1330,13 @@ Usage (In Ghost editor):
       min-width: 55%!important;
       max-width: 30rem!important;
     }
+    .contact-form {
+      padding-left: 0px!important;
+      padding-right: 2rem!important;
+    }
+    .form-item {
+      padding-left: 1rem!important;
+    }
   }
   /*768-BREAK*/
 
@@ -1328,6 +1365,16 @@ Usage (In Ghost editor):
     }
     .GB-post-header-offset {
       bottom: -30px;
+    }
+    .contact-form {
+      padding-left: 0px!important;
+      padding-right: 2rem!important;
+    }
+    .form-item {
+      padding-left: 0px!important;
+    }
+    .form-btn {
+      padding-left: 0px!important;
     }
   }
   /*500-BREAK*/
@@ -1395,5 +1442,20 @@ Usage (In Ghost editor):
     }
     .visible-xs {
       display: block!important
+    }
+    .contact-form {
+      padding: 0px!important
+    }
+    input, textarea {
+      width: 90%!important
+    }
+    .form-wrapper {
+      padding: .5rem!important;
+    }
+    .form-item {
+      padding-left: 0px!important;
+    }
+    .form-btn {
+      padding-left: 0px!important;
     }
   }
