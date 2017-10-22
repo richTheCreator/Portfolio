@@ -4,29 +4,30 @@
 
     {{#foreach posts}}
 
-      <div id="post" class="{{post_class}} col-xs-12 col-sm-6  ">
-        <div>
-          <div class="col-md-12 clip-bg">
-            <div class="gridBG" href="{{url}}" style="background-size:cover; height:25rem; max-height:400px; background-image:url({{img_url feature_image}})">
-              <a href="{{url absolute="true"}}"></a>
-            </div>
+      <div id="post" class="{{post_class}} col-xs-12 col-sm-6">
+        <div class="col-md-12 clip-bg">
+          <div class="gridBG" href="{{url}}" style="background-size:cover; height:25rem; max-height:400px; background-image:url({{img_url feature_image}})">
+            <a href="{{url absolute="true"}}"></a>
           </div>
-          <div style="margin-top:2rem" class="col-md-12">
-            <div class="col">
+        </div>
+        <div style="margin-top:2rem" class="col-md-12">
+          <div class="col" style="position:relative">
+            <a href="{{url absolute}}" style="position:absolute;top:0px;bottom:0px;left:0px;right:0px">
               {{tag}}
               <a class="post-link" href="{{url absolute="true"}}">{{{title}}}</a>
-              <p class="post-excerpt">{{excerpt words="30"}}&hellip;</p>
-              <div class="flex-adapt">
-                <button class="btn-rtc-container btn-rtc">
+            <p class="post-excerpt">{{excerpt words="30"}}&hellip;</p>
+            <div class="flex-adapt">
+              <a href="{{url absolute}}" class="btn-rtc-container btn-rtc">
                   READ MORE
                   <svg width="34" height="15" viewBox="0 0 58 27" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path class="arrow-path" d="M2.732 11.756h47.71l-7.72-7.778c-.678-.68-.678-1.786 0-2.467.675-.68 1.772-.68 2.447 0l10.676 10.757c.676.68.676 1.785 0 2.466L45.17 25.49c-.34.34-.782.51-1.225.51-.443 0-.886-.17-1.224-.51-.676-.682-.676-1.787 0-2.467l7.72-7.78H2.733C1.775 15.244 1 14.464 1 13.5c0-.963.775-1.744 1.732-1.744z" stroke="#FFF" fill-rule="nonzero" stroke-width="2" fill="#1F1F1F"/>
                 </svg>
-              </button>
-              </div>
-              {{!-- <p><a class="post-more" href="{{url absolute="true"}}">Read More <i class="icon-arrow-right"></i></a></p> --}}
+              </a>
             </div>
+            {{!-- <p><a class="post-more" href="{{url absolute="true"}}">Read More <i class="icon-arrow-right"></i></a></p> --}}
+            </a>
           </div>
         </div>
+        </a>
       </div>
 
       {{!-- {{/unless}} --}}
