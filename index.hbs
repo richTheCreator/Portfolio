@@ -54,10 +54,10 @@
         <div style="background-image:url({{asset "/images/codingAustin.jpg"}});" class="photo"></div>
       </div>
     </div>
-    <div class="row-md-12">
+    {{!-- <div class="row-md-12">
       <button type="button" class="slick-prev col-md-6">Previous</button>
       <button type="button" class="slick-next col-md-6">Next</button>
-    </div>
+    </div> --}}
   </div>
 </div>
 
@@ -68,7 +68,7 @@
       <hr style="color:#323852" class="dash">
       <h2 style="color:#323852" class=" section-titles no-padding">CONTACT.</h2>
       <div class="row form-wrapper" style="padding:1rem">
-        <div class="col-md-4 col-xs-12 no-padding" style="margin-bottom:7rem">
+        <div class="col-md-4 col-xs-12 no-padding" style="margin-bottom:4rem">
           <p style="text-align:left; margin-bottom:0px; max-width:40rem; color:#323852; padding-right:1rem" class=" section-desc no-padding">
             Let's create something purposeful together. Drop me a few lines.
           </p>
@@ -79,16 +79,16 @@
 
             <div class="row" style="margin:0px">
               <div class="form-item col-xs-12 col-sm-6">
-                <input type="text" name="First Name" style="max-width:40rem; height:100%" placeholder="First Name">
+                <input type="text" name="First Name" id="first_name" style="max-width:40rem; height:100%" placeholder="First Name">
               </div>
               <div class="form-item col-xs-12 col-sm-6">
-                <input type="text" name="Last Name" style="max-width:40rem; height:100%" placeholder="Last Name" />
+                <input type="text" name="Last Name" id="last_name" style="max-width:40rem; height:100%" placeholder="Last Name" />
               </div>
             </div>
 
             <div class="row" style="margin:0px">
               <div class="form-item col-xs-12 col-sm-6">
-                <input type="text" name="_replyto" style="max-width:40rem; height:100%" placeholder="Email Address">
+                <input type="text" name="_replyto" id="sender_email" style="max-width:40rem; height:100%" placeholder="Email Address">
               </div>
               <div class="form-item col-xs-12 col-sm-6">
                 <input type="text" name="Company Name" style="max-width:40rem; height:100%" placeholder="Company Name" />
@@ -97,7 +97,7 @@
 
             <div class="row" style="margin:0px">
               <div class="form-item col-xs-12">
-                <textarea style="max-width:50rem;" placeholder="Breif description of the project" name="Description" cols="40" rows="6"></textarea>
+                <textarea style="max-width:50rem;" id="contact_description" placeholder="Breif description of the project" name="Description" cols="40" rows="6"></textarea>
               </div>
             </div>
 
@@ -106,7 +106,13 @@
             </div> --}}
             <div class="row" style="margin:0px">
               <div style="padding-left:1rem;" class="form-btn" id="website">
-                <button type="submit" value="Send" class="btn-rtc-container btn-rtc">
+                <button type="submit" value="Send" class="btn-rtc-container btn-rtc contact-btn">
+                  SUBMIT
+                  <svg width="34" height="15" viewBox="0 0 58 27" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path class="arrow-path" d="M2.732 11.756h47.71l-7.72-7.778c-.678-.68-.678-1.786 0-2.467.675-.68 1.772-.68 2.447 0l10.676 10.757c.676.68.676 1.785 0 2.466L45.17 25.49c-.34.34-.782.51-1.225.51-.443 0-.886-.17-1.224-.51-.676-.682-.676-1.787 0-2.467l7.72-7.78H2.733C1.775 15.244 1 14.464 1 13.5c0-.963.775-1.744 1.732-1.744z" stroke="#FFF" fill-rule="nonzero" stroke-width="2" fill="#1F1F1F"/>
+                  </svg>
+                </button>
+
+                <button   type="button" disabled class="btn-rtc-container-invalid btn-rtc contact-btn-invalid">
                   SUBMIT
                   <svg width="34" height="15" viewBox="0 0 58 27" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path class="arrow-path" d="M2.732 11.756h47.71l-7.72-7.778c-.678-.68-.678-1.786 0-2.467.675-.68 1.772-.68 2.447 0l10.676 10.757c.676.68.676 1.785 0 2.466L45.17 25.49c-.34.34-.782.51-1.225.51-.443 0-.886-.17-1.224-.51-.676-.682-.676-1.787 0-2.467l7.72-7.78H2.733C1.775 15.244 1 14.464 1 13.5c0-.963.775-1.744 1.732-1.744z" stroke="#FFF" fill-rule="nonzero" stroke-width="2" fill="#1F1F1F"/>
                   </svg>

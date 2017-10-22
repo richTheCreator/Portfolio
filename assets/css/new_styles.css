@@ -1033,6 +1033,41 @@ Usage (In Ghost editor):
     opacity: 1;
   }
 
+  .btn-rtc-container-invalid {
+    margin-top: 2em;
+    color: white;
+    padding: 1.5em;
+    border: 1px solid #1f1f1f;
+    background-color: #1f1f1f;
+    opacity: 1;
+  }
+  .btn-rtc-container-invalid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 500ms ease;
+    z-index: 1;
+    border: 0px;
+    opacity: .4;
+  }
+
+  .btn-rtc-container-invalid svg {
+    margin-left: 10px;
+    transition: all 500ms ease;
+    /*border: 2px solid #323852;*/
+  }
+
+  .contact-btn-show {
+    display: block;
+  }
+
+  .contact-btn-hide {
+    display: none;
+  }
+
+
   #next-study {
     padding: 2rem;
   }
@@ -1209,19 +1244,23 @@ Usage (In Ghost editor):
     margin-bottom: 1.5rem;
   }
 
+  .invalid-form {
+    border-color: #e82b2d!important;
+    outline-color: #e82b2d!important;
+  }
+
   .container-contact input, textarea {
-    min-height: 2rem;
     display: block;
     background-color: white;
     padding-left: 1rem;
     margin: 0;
     border: .2rem solid transparent;
-    -webkit-appearance: none;
+    -webkit-appearance: none!important;
     -moz-appearance: none;
     appearance: none;
     border-radius: 0;
     font-size: 1rem!important;
-    line-height: 1.5rem!important;
+    line-height: 27px!important;
     padding-top: 6px;
     padding-bottom: 6px;
     width: 100%;
@@ -1234,9 +1273,8 @@ Usage (In Ghost editor):
     transition: border-color .12s cubic-bezier(.555, .205, .295, .975), outline-color .12s cubic-bezier(.555, .205, .295, .975);
   }
 
-  .container-contact input[type=email]:focus, input[type=text]:focus, textarea:focus {
-    border-color: #2c2c2c;
-    outline-color: #2c2c2c;
+  .container-contact input {
+    height: 2em!important;
   }
 
   .wrapper-contact, .vertical-Card {
@@ -1344,6 +1382,16 @@ Usage (In Ghost editor):
     html {
       font-size: 16px;
     }
+    .hello-sub-text {
+      padding-left: 0px;
+      padding-right: 65px;
+      font-size: 18px;
+      line-height: 26px;
+      max-width: 100%;
+    }
+    .vert-align {
+      vertical-align: bottom;
+    }
     /*HELPERS*/
     .visible-xs {
       display: block!important
@@ -1407,12 +1455,6 @@ Usage (In Ghost editor):
       font-size: 7rem;
       letter-spacing: -5px;
       margin-top: 25rem;
-    }
-    .hello-sub-text {
-      padding-left: 0px;
-      font-size: 18px;
-      line-height: 26px;
-      max-width: 100%;
     }
     .section-titles {
       width: 100%
