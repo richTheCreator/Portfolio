@@ -96,6 +96,7 @@
   <!-- <noscript><link href="{{asset "css/screen.min.css"}}" rel="stylesheet"></noscript> -->
   {{!-- <noscript><link href="{{asset "css/main_3.css"}}" rel="stylesheet"></noscript> --}}
   <link href="{{asset "css/flexboxgrid.min.css"}}" rel="stylesheet">
+  <link href="{{asset "css/overlay.css"}}" rel="stylesheet">
   <link href="{{asset "css/new_styles.css"}}" rel="stylesheet">
   <link href="{{asset "css/slick_4.css"}}" rel="stylesheet">
   <link href="{{asset "css/slick-theme_4.css"}}" rel="stylesheet">
@@ -103,7 +104,7 @@
   {{ghost_head}}
 </head>
 
-<body class="{{body_class}} nav-closed">
+<body class="{{body_class}}">
 
   {{navigation}}
 
@@ -133,6 +134,7 @@
   <script type="text/javascript" src="{{asset "js/npm.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/animations.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/validation.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/overlay.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/smoothscroll.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/tilt.jquery.js"}}"></script>
   {{{block "scripts"}}} {{ghost_foot}}

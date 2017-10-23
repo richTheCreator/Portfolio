@@ -183,7 +183,7 @@
     height: 4px;
     width: 100%;
     top: 100%;
-    margin-top: -8px;
+    margin-top: -13px;
     right: 0;
     background: #F9F9F9;
     -webkit-transform: translate3d(-100%, 0, 0);
@@ -212,6 +212,67 @@
   }
 
   .nav-text-fx:hover::before {
+    width: 100%;
+  }
+
+  .nav-text-lg {
+    font-family: "Muli";
+    outline: none;
+    text-decoration: none;
+    position: relative;
+    font-size: 1em;
+    line-height: 1;
+    color: #9e9ba4;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .nav-text-lg-fx {
+    text-transform: uppercase;
+    font-weight: 900;
+    overflow: hidden;
+    color: #dadada;
+  }
+
+  .nav-text-lg-fx:hover {
+    color: #dadada;
+  }
+
+  .nav-text-lg-fx::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    top: 100%;
+    margin-top: -13px;
+    right: 0;
+    background: #F9F9F9;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  }
+
+  .nav-text-lg-fx:hover::after {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  .nav-text-lg-fx::before {
+    content: attr(data-letters);
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+    color: #ECE3D8;
+    white-space: nowrap;
+    width: 0%;
+    -webkit-transition: width 0.4s 0.3s;
+    transition: width 0.4s 0.3s;
+  }
+
+  .nav-text-lg-fx:hover::before {
     width: 100%;
   }
 
@@ -1400,10 +1461,7 @@ Usage (In Ghost editor):
     .hidden-xs {
       display: none;
     }
-    /*NAVBAR*/
-    .navbar-default {
-      align-items: center;
-    }
+
     .devices-img {
       top: 95px;
       min-width: 65%!important;
