@@ -173,21 +173,11 @@
 
 /* Slider */
 
-.slick-center {
-  opacity: 1!important;
-  -moz-transform: scale(1.08);
-  -ms-transform: scale(1.08);
-  -o-transform: scale(1.08);
-  -webkit-transform: scale(1.08, 1.08);
-  transform: scale(1.08, 1.08);
-  box-shadow: 0 15px 35px rgba(50, 50, 93, .4), 0 5px 15px rgba(0, 0, 0, .4);
-  color: #e67e22;
-  opacity: 1;
-}
 
 .slick-slider {
   position: relative;
-  width: 100%;
+  width: 90%;
+  margin:auto;
   display: block;
   box-sizing: border-box;
   -webkit-user-select: none;
@@ -204,7 +194,7 @@
 .slick-list {
   position: relative;
   display: block;
-  overflow: hidden;
+  /*overflow:hidden; this may need to be enabled if images are stacking below on resize*/
   margin: 0;
   padding: 1rem 1rem !important;
   min-height: 30rem;
@@ -254,6 +244,8 @@
   float: left;
   opacity: .6;
   height: 90%;
+  z-index: 0;
+  position:relative;
   width: 3.5%;
   margin-right: 100px;
   transition: opacity 1s;
@@ -271,6 +263,20 @@
   display: block;
   height: auto;
   width: 100%;
+}
+
+
+.slick-center {
+  opacity: 1!important;
+  -moz-transform: scale(1.08);
+  -ms-transform: scale(1.08);
+  -o-transform: scale(1.08);
+  -webkit-transform: scale(1.08, 1.08);
+  transform: scale(1.08, 1.08);
+  box-shadow: 0 15px 35px rgba(50, 50, 93, .4), 0 5px 15px rgba(0, 0, 0, .4);
+  color: #e67e22;
+  opacity: 1;
+  z-index: 1000;
 }
 
 .slick-slide.slick-loading img {

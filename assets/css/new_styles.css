@@ -1367,16 +1367,16 @@ Usage (In Ghost editor):
 
   .site-footer {
     position: relative;
-    margin: 0;
-    padding: 1rem 15px;
-    font-size: 2rem;
-    line-height: 1.75em;
-    color: #FFF;
-    background-color: #242424
+    padding: 2em 0;
   }
 
-  .always {
-    font-size: 1em
+  .USA {
+    font-size: 1em;
+    color:#ECE3D8;
+    letter-spacing: 3px;
+    text-align: center;
+    font-family: 'Muli';
+    font-weight: 900;
   }
   /*LAYOUT-HELPERS*/
 
