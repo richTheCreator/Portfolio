@@ -15,6 +15,7 @@ $('#toggle').click(function() {
 
   $(this).toggleClass('toggle-active');
   $('.home-template').toggleClass('no-scroll');
+  $('.post-template').toggleClass('no-scroll');
   $('#overlay').toggleClass('nav-active');
 
 });
@@ -22,6 +23,7 @@ $('#toggle').click(function() {
 $('.nav-lg-toggle').click(function() {
   $('#toggle').toggleClass('toggle-active');
   $('.home-template').toggleClass('no-scroll');
+  $('.post-template').toggleClass('no-scroll');
   $('#overlay').toggleClass('nav-active');
 
   if(opened){
