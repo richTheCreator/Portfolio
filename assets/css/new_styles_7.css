@@ -1037,6 +1037,9 @@ Usage (In Ghost editor):
     -moz-background-size: cover;
     -o-background-size: cover
   }
+  .ARC-post-header {
+    background-image: linear-gradient(-225deg, #e11b22 0%, #820006 100%);
+  }
 
   .GB-post-header-stripe {
     background-image: url(../images/GB/stripe_bg.png);
