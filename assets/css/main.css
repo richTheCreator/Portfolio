@@ -160,8 +160,21 @@
     text-decoration: none;
     position: relative;
     font-size: 1em;
+    letter-spacing: 1px;
     line-height: 1;
     color: #9e9ba4;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .contact-text {
+    font-family: "Muli";
+    outline: none;
+    text-decoration: none;
+    position: relative;
+    letter-spacing: 1px;
+    font-size: 1em;
+    line-height: 1;
+    color: #FFF;
     display: inline-block;
     cursor: pointer;
   }
@@ -171,11 +184,20 @@
     font-weight: 900;
     overflow: hidden;
     color: #dadada;
+    padding:14px;
+  }
+  .contact-text-fx {
+    background-color:#323852;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #FFFFFF66;
+    overflow: hidden;
+    padding:14px;
   }
 
-  .nav-text-fx:hover {
+  /*.nav-text-fx:hover {
     color: #dadada;
-  }
+  }*/
 
   .nav-text-fx::after {
     content: '';
@@ -183,7 +205,24 @@
     height: 4px;
     width: 100%;
     top: 100%;
-    margin-top: -13px;
+    margin-top: -26px;
+    right: 0;
+    background: #F9F9F9;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  }
+
+  .contact-text-fx::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    top: 100%;
+    margin-top: -26px;
     right: 0;
     background: #F9F9F9;
     -webkit-transform: translate3d(-100%, 0, 0);
@@ -199,6 +238,11 @@
     transform: translate3d(100%, 0, 0);
   }
 
+  .contact-text-fx:hover::after {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
   .nav-text-fx::before {
     content: attr(data-letters);
     position: absolute;
@@ -210,8 +254,22 @@
     -webkit-transition: width 0.4s 0.3s;
     transition: width 0.4s 0.3s;
   }
+  .contact-text-fx::before {
+    content: attr(data-letters);
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+    color: #F8F8F8;
+    white-space: nowrap;
+    width: 0%;
+    -webkit-transition: width 0.4s 0.3s;
+    transition: width 0.4s 0.3s;
+  }
 
   .nav-text-fx:hover::before {
+    width: 100%;
+  }
+  .contact-text-fx:hover::before {
     width: 100%;
   }
 
@@ -280,7 +338,7 @@
     display: flex;
     flex: 4;
     flex-direction: row;
-    min-width: 15rem;
+    min-width: 20rem;
     justify-content: space-between;
   }
 
@@ -417,6 +475,7 @@
   }
 
   .section-titles {
+    font-family:"Muli";
     margin-top: .5rem;
     margin-bottom: .5rem;
     font-size: 1rem;
@@ -435,7 +494,7 @@
     /* padding: 1.1rem; */
     color: #1f1f1f;
     letter-spacing: 0;
-    padding-right:1rem!important;
+    padding-right: 1rem!important;
   }
   /*WORK_POSTS*/
 
@@ -446,14 +505,14 @@
   #push div:last-child {
     margin-bottom: 0px!important;
   }
-
   /*#post {
     padding: 2rem;
   }*/
 
-.post-list {
-  padding:2em;
-}
+  .post-list {
+    padding: 2em;
+  }
+
   .post {
     background-size: cover;
     margin-bottom: 4rem;
@@ -507,8 +566,8 @@
     background-size: cover;
     position: relative;
     z-index: 100000;
-    height:25rem;
-    max-height:400px!important;
+    height: 25rem;
+    max-height: 400px!important;
   }
 
   .gridBG a {
@@ -553,6 +612,7 @@
     font-weight: 900;
     text-decoration: none;
     color: #1f1f1f;
+    border-radius:0px;
   }
 
   .btn-rtc-container {
@@ -563,6 +623,7 @@
     background: none;
     position: relative;
     transition: all 500ms ease;
+    border-radius: 0px!important;
     z-index: 1;
     border: 0px;
     opacity: .4;
@@ -1003,7 +1064,7 @@ Usage (In Ghost editor):
 
   .postText-wrapper {
     max-width: 700px;
-    margin:auto;
+    margin: auto;
   }
 
   .postText-padding {
@@ -1020,6 +1081,7 @@ Usage (In Ghost editor):
 
   .fullwidth-img img {
     max-width: 100%;
+    width: 100%;
   }
 
   .small-img img {
@@ -1037,6 +1099,7 @@ Usage (In Ghost editor):
     -moz-background-size: cover;
     -o-background-size: cover
   }
+
   .ARC-post-header {
     background-image: linear-gradient(-225deg, #e11b22 0%, #820006 100%);
   }
@@ -1063,7 +1126,7 @@ Usage (In Ghost editor):
     position: relative;
     color: white;
     text-align: center;
-    font-size: 2em;
+    font-size: 4.2em;
     line-height: 1.2em;
   }
 
@@ -1114,6 +1177,7 @@ Usage (In Ghost editor):
     background-color: #1f1f1f;
     opacity: 1;
   }
+
   .btn-rtc-container-invalid {
     display: flex;
     flex-direction: row;
@@ -1139,7 +1203,6 @@ Usage (In Ghost editor):
   .contact-btn-hide {
     display: none;
   }
-
 
   #next-study {
     padding: 2rem;
@@ -1383,7 +1446,7 @@ Usage (In Ghost editor):
 
   .USA {
     font-size: 1em;
-    color:#ECE3D8;
+    color: #ECE3D8;
     letter-spacing: 3px;
     text-align: center;
     font-family: 'Muli';
@@ -1410,7 +1473,7 @@ Usage (In Ghost editor):
   }
   /*1400-BREAK*/
 
-  @media only screen and (min-width: 75em){
+  @media only screen and (min-width: 75em) {
     .contact-form {
       padding: 0 2rem 0 2rem!important;
     }
@@ -1430,8 +1493,8 @@ Usage (In Ghost editor):
       background-position-y: 120px;
     }
     .gridBG {
-      max-height:600px;
-      max-width:600px;
+      max-height: 600px;
+      max-width: 600px;
     }
   }
   /*1025-BREAK*/
@@ -1444,7 +1507,7 @@ Usage (In Ghost editor):
       max-width: 500px;
     }
     .GB-post-header-tagline {
-      font-size: 1.6em;
+      font-size: 3.2em!important;
     }
     .devices-img {
       top: 95px;
@@ -1470,7 +1533,7 @@ Usage (In Ghost editor):
       padding-right: 65px;
       font-size: 18px;
       line-height: 26px;
-      max-width: 100%;
+      max-width: 475px;
     }
     .vert-align {
       vertical-align: bottom;
@@ -1482,7 +1545,6 @@ Usage (In Ghost editor):
     .hidden-xs {
       display: none;
     }
-
     .devices-img {
       top: 95px;
       min-width: 65%!important;
@@ -1493,6 +1555,9 @@ Usage (In Ghost editor):
     }
     .GB-post-header-offset {
       bottom: -30px;
+    }
+    .GB-post-header-tagline {
+      font-size: 3.2em!important;
     }
     .contact-form {
       padding-left: 0px!important;
@@ -1507,7 +1572,7 @@ Usage (In Ghost editor):
   }
   /*500-BREAK*/
 
-  @media only screen and (min-width: 320px) and (max-width: 479px) {
+  @media only screen and (min-width: 280px) and (max-width: 479px) {
     html {
       font-size: 14px;
     }
@@ -1520,7 +1585,7 @@ Usage (In Ghost editor):
       background: 0 0
     }
     .post-full-content p {
-      font-size:16px!important;
+      font-size: 16px!important;
       line-height: 32px;
     }
     .menu-button:hover {
@@ -1539,6 +1604,10 @@ Usage (In Ghost editor):
       font-size: 7rem;
       letter-spacing: -5px;
       margin-top: 25rem;
+      line-height: 1em!important;
+    }
+    .GB-post-header-tagline {
+      font-size: 2.2em
     }
     .section-titles {
       width: 100%
@@ -1586,6 +1655,6 @@ Usage (In Ghost editor):
     }
     .USA {
       font-size: .8em;
-      padding:0 1.2em;
+      padding: 0 1.2em;
     }
   }
