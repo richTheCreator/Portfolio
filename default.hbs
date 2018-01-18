@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />{{! Page Meta }}
+  <title>{{meta_title}}</title>
+  {{!-- <link href="{{asset "css/pace.css"}}" rel="stylesheet"> --}}
+  <link href="{{asset "css/pace-theme-big-counter_7.tmpl.css"}}" rel="stylesheet">
+  <style>
+    body> :not(.pace),
+    body:before,
+    body:after {
+      -webkit-transition: opacity .4s ease-in-out;
+      -moz-transition: opacity .4s ease-in-out;
+      -o-transition: opacity .4s ease-in-out;
+      -ms-transition: opacity .4s ease-in-out;
+      transition: opacity .4s ease-in-out
+    }
+
+    body:not(.pace-done)> :not(.pace),
+    body:not(.pace-done):before,
+    body:not(.pace-done):after {
+      opacity: 0;
+      height: 100vh;
+      overflow: hidden
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Muli:900,700,400i,400']
+      }
+    });
+  </script>
+  <link href="{{asset "css/flexboxgrid.min.css"}}" rel="stylesheet">
+  <link href="{{asset "css/animate.css"}}" rel="stylesheet">
+  <link href="{{asset "css/plyr.min.css"}}" rel="stylesheet">
+  <link href="{{asset "css/overlay.css"}}" rel="stylesheet">
+  <link href="{{asset "css/main.css"}}" rel="stylesheet">
+  <link href="{{asset "css/slick_7.css"}}" rel="stylesheet">
+  <link href="{{asset "css/slick-theme_7.css"}}" rel="stylesheet">
+  <link rel="shortcut icon" href="{{asset "favicon.ico"}}"> {{ghost_head}}
+</head>
+
+<body class="{{body_class}}">
+
+  {{navigation}}
+
+
+
+  <div class="wrapper-site">
+
+    {{! Everything else gets inserted here }}
+
+    {{{body}}}
+
+      <footer class="site-footer clearfix" style="background-color:#323852">
+        <div class="row" style='justify-content:center'>
+          <span class="USA">MADE IN 🇺🇸 WITH ☕️ & 💻</span>
+        </div>
+      </footer>
+
+  </div>
+
+  {{! Ghost outputs important scripts and data with this tag }}
+
+  <script type="text/javascript" src="{{asset "js/tabs.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/pace.js"}}"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="{{asset "js/slick.min.js"}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+  <script type="text/javascript" src="{{asset "js/animations.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/viewportchecker.min.js"}}"></script>
+  {{! The main JavaScript file for Casper }}
+  {{!-- <script type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script> --}}
+  {{!-- <script type="text/javascript" src="{{asset "js/typed.min.js"}}"></script> --}}
+  <script type="text/javascript" src="{{asset "js/npm.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/validation.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/overlay.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/smoothscroll.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/plyr.js"}}"></script>
+  <script>
+    plyr.setup();
+  </script>
+  {{{block "scripts"}}} {{ghost_foot}}
+
+</body>
+
+</html>

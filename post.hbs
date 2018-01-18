@@ -1,0 +1,37 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+
+  <main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+      <article>
+        <section class="post-full-content">
+          {{content}}
+        </section>
+      </article>
+
+    </div>
+  </main>
+
+  {{!-- Links to Previous/Next posts --}}
+  <aside class="read-next outer">
+    <div class="inner">
+      <div class="read-next-feed">
+        <div class="container-fluid row" id="case-studies" style="background-color:#323852; justify-content:center;padding:0rem;">
+          {{#prev_post}}
+            {{> "post-card"}}
+          {{/prev_post}}
+        </div>
+      </div>
+    </div>
+  </aside>
+{{/post}}
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+
+{{/contentFor}}
