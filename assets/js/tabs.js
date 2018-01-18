@@ -1,28 +1,48 @@
 function showTab(evt, tabName) {
   // checks for hiding and showing tabBars
-  if (tabName === 'Devtab') {
-    // needs to be wrapped in timeout
-    // since the width is not known yet
-    setTimeout(function() {
-      if ($('.scrollableX').hasHScrollBar()) {
-        console.log('tabClick------------ has scroll bar!')
-        // if a scroll bar is present, show the right arrow
-        $('.rt-arrow-libs').removeClass('dontShowArrow')
-        $('.rt-arrow-libs').addClass('doShow')
-      } else if (!$('.scrollableX').hasHScrollBar()) {
-        // if a scroll bar is NOT  present, hide the right arrow
-        $('.rt-arrow-libs').removeClass('doShow')
-        $('.rt-arrow-libs').addClass('dontShowArrow')
-      }
-    }, 050);
-  }
+  // if (tabName === 'Devtab') {
+  // needs to be wrapped in timeout
+  // since the width is not known yet
+  var current = `#${tabName + ' .scrollableX'}`
+
+  setTimeout(function() {
+    if ($(current).hasHScrollBar()) {
+      console.log('tabClick------------ has scroll bar!')
+      // if a scroll bar is present, show the right arrow
+      $('.rt-arrow-libs').removeClass('dontShowArrow')
+      $('.rt-arrow-libs').addClass('doShow')
+    } else if (!$('.scrollableX').hasHScrollBar()) {
+      // if a scroll bar is NOT  present, hide the right arrow
+      $('.rt-arrow-libs').removeClass('doShow')
+      $('.rt-arrow-libs').addClass('dontShowArrow')
+    }
+  }, 100);
+  // }
   // TweenLite.to(".post", 0, {className:"+=animated fadeInUp"})
 
   // Declare all variables
   var i,
     tabcontent,
     posts,
-    tablinks;
+    tablinks,
+    currentTab;
+
+  // Get all elements with class="scrollableX" and hide them
+  scrollableX = document.getElementsByClassName("scrollableX");
+  for (i = 0; i < scrollableX.length; i++) {
+    console.log('FOUND------', scrollableX[i])
+    scrollableX[i].className = scrollableX[i].className.replace("scrollableX", "");
+  }
+  // Determine the tab, then add the "scrollableX" class
+  // to the child div horizonScroll
+
+  currentTab =
+    tabName === 'ALLtab' ? `#${tabName + ' .horizonScroll1'}` :
+    tabName === 'UItab'  ? `#${tabName + ' .horizonScroll2'}` :
+    tabName === 'UXtab'  ? `#${tabName + ' .horizonScroll3'}` : `#${tabName + ' .horizonScroll4'}`
+
+  console.log(`selecting ------- ${currentTab}`)
+  $(currentTab).addClass('scrollableX');
 
   // Get all elements with class="tabcontent" and hide them
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -40,10 +60,9 @@ function showTab(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   posts = document.getElementsByClassName('post')
   for (i = 0; i < posts.length; i++) {
-    posts[i].className = posts[i].className += ' animated fadeInUp'
+    posts[i].className = posts[i].className += 'animated fadeInUp'
   }
 
   // posts = document.getElementById('post-list').className += " animatedIn"
   evt.currentTarget.className += " tab-text-selected";
-
 }

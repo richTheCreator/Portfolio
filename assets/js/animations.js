@@ -12,11 +12,11 @@ $(document).ready(function() {
   document.getElementById("defaultOpen").click();
 
   // initial page load check for scrollbar being present
-  if ($('.scrollableX').hasHScrollBar()) {
-    console.log('init---------- has scroll bar!')
-  } else if (!$('.scrollableX').hasHScrollBar()) {
-    console.log('init---------- no scroll bar!')
-  }
+  // if ($('.scrollableX').hasHScrollBar()) {
+  //   console.log('init---------- has scroll bar!')
+  // } else if (!$('.scrollableX').hasHScrollBar()) {
+  //   console.log('init---------- no scroll bar!')
+  // }
 
   //----- RESIZE EVTS
 
@@ -108,15 +108,20 @@ $(document).ready(function() {
 
   //ON SCROLL FN FOR SVG ICON ROW IN WORK TABS
   $(function() {
-    $('.scrollableX').scroll(function() {
 
+    function checkScroll(tabName) {
+      console.log('TABNAME----', tabName)
       var $elem = $('.scrollableX');
       var newScrollLeft = $elem.scrollLeft(),
         width = $elem.width(),
         scrollWidth = $elem.get(0).scrollWidth,
-        offset = $('.rt-arrow-libs').width(),
+        offset = $(`#${tabName + ' .rt-arrow-libs'}`).width(),
         padding = 16;
 
+      console.log('width------- ', width)
+      console.log('scrollWidth------- ', scrollWidth)
+      console.log('newScrollLeft------- ', newScrollLeft)
+      console.log('offset------- ', offset)
       // current scrollPos
       var scrollPos = width + newScrollLeft + offset - padding;
 
@@ -132,7 +137,7 @@ $(document).ready(function() {
 
       // CONDITIONALS TO DETERMINE SCROLLPOS
       if (between(scrollPos, scrollErrorMinus, scrollErrorPlus)) {
-        // we are at the right-end of the scrollbar
+        // check if we are at the right-end
         $('.rt-arrow-libs').removeClass('doShow')
         $('.rt-arrow-libs').addClass('dontShowArrow')
         console.log('between------- at right');
@@ -146,6 +151,18 @@ $(document).ready(function() {
         $('.rt-arrow-libs').addClass('doShow')
         $('.rt-arrow-libs').removeClass('dontShowArrow')
       }
+    }
+    $('.horizonScroll1').on('scroll', function(){
+      checkScroll('ALLtab')
+    });
+    $('.horizonScroll2').on('scroll', function(){
+      checkScroll('UItab')
+    });
+    $('.horizonScroll3').on('scroll', function(){
+      checkScroll('UXtab')
+    });
+    $('.horizonScroll4').on('scroll', function(){
+      checkScroll('Devtab')
     });
   });
 
