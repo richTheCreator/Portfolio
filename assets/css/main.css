@@ -187,7 +187,7 @@
     text-transform: uppercase;
     font-weight: 900;
     overflow: hidden;
-    color: #dadada;
+    color: #c9ced2;
     padding: 14px;
   }
 
@@ -200,7 +200,7 @@
     text-transform: uppercase;
     font-weight: 900;
     overflow: hidden;
-    color: #dadada;
+    color: #c9ced2;
     padding: 0rem 2rem 0rem 0rem
   }
 
@@ -315,11 +315,11 @@
     text-transform: uppercase;
     font-weight: 900;
     overflow: hidden;
-    color: #dadada;
+    color: #c9ced2;
   }
 
   .nav-text-lg-fx:hover {
-    color: #dadada;
+    color: #c9ced2;
   }
 
   .nav-text-lg-fx::after {
@@ -414,7 +414,7 @@
     display: table;
     width: 100%;
     min-height: 300px;
-    height: 800px;
+    height: 75vh;
     text-align: center;
     background: center center no-repeat #323852;
     background-size: cover;
@@ -591,6 +591,8 @@
 
   #post:hover .btn-rtc-container {
     opacity: 1;
+    color: #1f1f1f;
+    transition: all 500ms ease;
   }
 
   #post:hover .btn-rtc-container svg {
@@ -677,6 +679,8 @@
 
   .btn-rtc-container {
     display: flex;
+    color: #c9ced2;
+    padding: .5em;
     flex-direction: row;
     align-items: center;
     text-transform: uppercase;
@@ -686,7 +690,7 @@
     border-radius: 0px !important;
     z-index: 1;
     border: 0px;
-    opacity: .4;
+    opacity: 1;
   }
 
   .btn-rtc-container {
@@ -1107,6 +1111,42 @@ Usage (In Ghost editor):
     letter-spacing: 0;
   }
 
+  .labels-post-home {
+    font-weight: 700;
+    font-family: Muli;
+    font-size: 18px;
+    color: #c9ced2;
+    letter-spacing: 0px;
+  }
+  .labels-post-home-alt {
+    font-weight: 700;
+    font-family: Muli;
+    font-size: 18px;
+    color: #c9ced2;
+    margin-bottom:0px;
+    letter-spacing: 0px;
+    padding-left: 1em;
+  }
+
+  .icon-sm-font {
+    size: 14px;
+    width: 75px;
+    font-family: 'Muli';
+    line-height: 21px;
+    text-align: center;
+    font-weight: 500;
+    color: #c9ced2;
+    margin-bottom: 1em;
+  }
+
+  .tab-title-container {
+    padding-left: 2.6rem;
+    align-items: center;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    padding-right: 1em;
+  }
+
   .overview-items {
     font-weight: 400;
     font-size: 1rem;
@@ -1328,23 +1368,47 @@ Usage (In Ghost editor):
     margin-bottom: 3rem;
     display: flex;
     max-width: 50rem;
-    padding-bottom: 2rem;
-    width: 100%!important;
+    padding-bottom: 1rem;
+    width: 100% !important;
     justify-content: space-between;
     flex-wrap: nowrap;
+    overflow-y: hidden;
     overflow-x: scroll !important;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     padding-left: 2.6rem;
   }
 
-  .dontShowArrow {
-    opacity:0!important
+  .scrollableX svg {
+    width: 75px;
+    height: 100%;
+    margin-right: .5em;
+    height: 50px;
   }
+
+  .scrollableX svg path {
+    fill: #c9ced2
+  }
+
+  .rt-arrow-libs {
+    padding-left: 0px;
+    height: 84px;
+  }
+
+  /*.rt-arrow-libs svg {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }*/
+
+  .dontShowArrow {
+    opacity: 0 !important
+  }
+
   .scrollableX div {
     flex: 0 0 auto;
     margin-right: 2em;
-    width: 75px;
+    width: 100px;
   }
 
   }

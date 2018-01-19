@@ -126,8 +126,8 @@ $(document).ready(function() {
       var scrollPos = width + newScrollLeft + offset - padding;
 
       // Tolerances
-      var scrollErrorMinus = scrollWidth - 30;
-      var scrollErrorPlus = scrollWidth + 30;
+      var scrollErrorMinus = scrollWidth - 50;
+      var scrollErrorPlus = scrollWidth + 150;
 
       // Helper fn to check if scroll is at far right
       function between(x, min, max) {
