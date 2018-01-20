@@ -1125,7 +1125,6 @@ Usage (In Ghost editor):
     color: #c9ced2;
     margin-bottom:0px;
     letter-spacing: 0px;
-    padding-left: 1em;
   }
 
   .icon-sm-font {
@@ -1367,7 +1366,7 @@ Usage (In Ghost editor):
   .scrollableX {
     margin-bottom: 3rem;
     display: flex;
-    max-width: 50rem;
+    max-width: 55rem;
     padding-bottom: 1rem;
     width: 100% !important;
     justify-content: space-between;
@@ -1393,6 +1392,7 @@ Usage (In Ghost editor):
   .rt-arrow-libs {
     padding-left: 0px;
     height: 84px;
+    width: 54px!important
   }
 
   /*.rt-arrow-libs svg {
