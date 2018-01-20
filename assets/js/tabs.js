@@ -1,4 +1,8 @@
 function showTab(evt, tabName) {
+  if (tabName !== 'ALLtab') {
+    $('.tab-title-container, .horizonScroll2, .horizonScroll3, .horizonScroll4, .post, .tabcontent .wrapper-desc').addClass("doShow animated fadeInUp")
+  }
+
   // checks for hiding and showing tabBars
   // if (tabName === 'Devtab') {
   // needs to be wrapped in timeout
@@ -7,7 +11,7 @@ function showTab(evt, tabName) {
 
   setTimeout(function() {
     if ($(current).hasHScrollBar()) {
-      console.log('tabClick------------ has scroll bar!')
+      // console.log('tabClick------------ has scroll bar!')
       // if a scroll bar is present, show the right arrow
       $('.rt-arrow-libs').removeClass('dontShowArrow')
       $('.rt-arrow-libs').addClass('doShow')
@@ -30,18 +34,21 @@ function showTab(evt, tabName) {
   // Get all elements with class="scrollableX" and hide them
   scrollableX = document.getElementsByClassName("scrollableX");
   for (i = 0; i < scrollableX.length; i++) {
-    console.log('FOUND------', scrollableX[i])
+    // console.log('FOUND------', scrollableX[i])
     scrollableX[i].className = scrollableX[i].className.replace("scrollableX", "");
   }
   // Determine the tab, then add the "scrollableX" class
   // to the child div horizonScroll
 
-  currentTab =
-    tabName === 'ALLtab' ? `#${tabName + ' .horizonScroll1'}` :
-    tabName === 'UItab'  ? `#${tabName + ' .horizonScroll2'}` :
-    tabName === 'UXtab'  ? `#${tabName + ' .horizonScroll3'}` : `#${tabName + ' .horizonScroll4'}`
+  currentTab = tabName === 'ALLtab'
+    ? `#${tabName + ' .horizonScroll1'}`
+    : tabName === 'UItab'
+      ? `#${tabName + ' .horizonScroll2'}`
+      : tabName === 'UXtab'
+        ? `#${tabName + ' .horizonScroll3'}`
+        : `#${tabName + ' .horizonScroll4'}`
 
-  console.log(`selecting ------- ${currentTab}`)
+  // console.log(`selecting ------- ${currentTab}`)
   $(currentTab).addClass('scrollableX');
 
   // Get all elements with class="tabcontent" and hide them
@@ -58,10 +65,10 @@ function showTab(evt, tabName) {
 
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(tabName).style.display = "block";
-  posts = document.getElementsByClassName('post')
-  for (i = 0; i < posts.length; i++) {
-    posts[i].className = posts[i].className += 'animated fadeInUp'
-  }
+  // posts = document.getElementsByClassName('post')
+  // for (i = 0; i < posts.length; i++) {
+  //    posts[i].className = posts[i].className += 'animated fadeInUp'
+  // }
 
   // posts = document.getElementById('post-list').className += " animatedIn"
   evt.currentTarget.className += " tab-text-selected";

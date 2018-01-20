@@ -11,13 +11,6 @@ $(document).ready(function() {
   //loading first Tab - ALL
   document.getElementById("defaultOpen").click();
 
-  // initial page load check for scrollbar being present
-  // if ($('.scrollableX').hasHScrollBar()) {
-  //   console.log('init---------- has scroll bar!')
-  // } else if (!$('.scrollableX').hasHScrollBar()) {
-  //   console.log('init---------- no scroll bar!')
-  // }
-
   //----- RESIZE EVTS
 
   //check if on resize a scrollbar is present for
@@ -48,69 +41,14 @@ $(document).ready(function() {
 
   //----- ANIMATIONS WHEN IN VIEWPORT
   $('.devices-img').addClass("dontShow").viewportChecker({classToAdd: 'doShow animated fadeInRight', offset: 200});
-  $('.wrapper-hero-text').addClass("dontShow").viewportChecker({classToAdd: 'doShow animated fadeInUp', offset: 0});
-  $('.wrapper-desc, .slick-slider').addClass("dontShow").viewportChecker({classToAdd: 'doShow animated fadeInUp', offset: 0});
-
-  //if the last icon is not in view, show the rt-arrow
-  // if the devie has enough width to show all, hide the rt-arrow
-  // $('.last-icon-libs').viewportChecker({
-  //   callbackFunction: function(elem, action) {
-  //     $('.rt-arrow-libs').addClass("dontShow")
-  //   },
-  //   scrollHorizontal: true
-  // })
-
-  // $(window).on('resize', function() {
-  //   var width = $('.scrollableX').width()
-  //   console.log('scrollableX----width',width)
-  //    if (width === 835.2) {
-  //     $('.rt-arrow-libs').addClass('dontShowArrow')
-  //   }
-  //    if ($('.last-icon-libs').isInViewport()) {
-  //      console.log('viewport')
-  //
-  //      $('rt-arrow-libs').toggleClass("doShow");
-  //    } else {
-  //      console.log('not in view')
-  //      $('rt-arrow-libs').removeClass("doShow");
-  //    }
-  // });
-
-  // var scrolLeft = $(window).scrollLeft();
-  // var windw = $('.scrollableX').width(); important
-  // var documet = $('.scrollableX').width();
-  // $('.scrollableX').scroll(function() {
-  //   if ($('.scrollableX').scrollLeft() + windw == documet) {
-  //     console.log("right!", $('.scrollableX').scrollLeft() + windw);
-  //
-  //   }
-  // });
-
-  // $("#leftArrow").click(function () {
-  //     var leftPos = $('.scrollableX').scrollLeft();
-  //     $(".scrollableX").animate({
-  //         scrollLeft: leftPos - 200
-  //     }, 800);
-  // });
-  //
-  // $("#rightArrow").click(function () {
-  //     var leftPos = $('.scrollableX').scrollLeft();
-  //     $(".scrollableX").animate({
-  //         scrollLeft: leftPos + 200
-  //     }, 800);
-  // });
-  //
-  // $(".c").click(function () {
-  //     $(this).addClass("question-viewed")
-  //            .addClass("current-question")
-  //            .siblings().removeClass("current-question");
-  // });
+  $('.wrapper-hero-text, .USA, .animated-blog-post').addClass("dontShow").viewportChecker({classToAdd: 'doShow animated fadeInUp', offset: 0});
+  $('.wrapper-desc, .slick-slider, .tab-title-container, .scrollableX, .post, .tabcontent .wrapper-desc').addClass("dontShow").viewportChecker({classToAdd: 'doShow animated fadeInUp', offset: 0});
 
   //ON SCROLL FN FOR SVG ICON ROW IN WORK TABS
   $(function() {
 
     function checkScroll(tabName) {
-      console.log('TABNAME----', tabName)
+      // console.log('TABNAME----', tabName)
       var $elem = $('.scrollableX');
       var newScrollLeft = $elem.scrollLeft(),
         width = $elem.width(),
@@ -118,20 +56,20 @@ $(document).ready(function() {
         offset = $(`#${tabName + ' .rt-arrow-libs'}`).width(),
         padding = 16;
 
-      console.log('width------- ', width)
-      console.log('scrollWidth------- ', scrollWidth)
-      console.log('newScrollLeft------- ', newScrollLeft)
-      console.log('offset------- ', offset)
+      // console.log('width------- ', width)
+      // console.log('scrollWidth------- ', scrollWidth)
+      // console.log('newScrollLeft------- ', newScrollLeft)
+      // console.log('offset------- ', offset)
       // current scrollPos
       var scrollPos = width + newScrollLeft + offset - padding;
 
       // Tolerances
-      var scrollErrorMinus = scrollWidth - 50;
+      var scrollErrorMinus = scrollWidth - 80;
       var scrollErrorPlus = scrollWidth + 150;
 
       // Helper fn to check if scroll is at far right
       function between(x, min, max) {
-        console.log('Is scrollPos of ', x, ' between ', min, ' and ', max, ' ?')
+        // console.log('Is scrollPos of ', x, ' between ', min, ' and ', max, ' ?')
         return x >= min && x <= max;
       }
 
@@ -140,10 +78,10 @@ $(document).ready(function() {
         // check if we are at the right-end
         $('.rt-arrow-libs').removeClass('doShow')
         $('.rt-arrow-libs').addClass('dontShowArrow')
-        console.log('between------- at right');
+        // console.log('between------- at right');
       } else if (newScrollLeft === 0) {
         // check if we are at the left-end))
-        console.log('at----- left')
+        // console.log('at----- left')
         $('.rt-arrow-libs').removeClass('dontShowArrow')
         $('.rt-arrow-libs').addClass('doShow')
       } else {
@@ -152,16 +90,16 @@ $(document).ready(function() {
         $('.rt-arrow-libs').removeClass('dontShowArrow')
       }
     }
-    $('.horizonScroll1').on('scroll', function(){
+    $('.horizonScroll1').on('scroll', function() {
       checkScroll('ALLtab')
     });
-    $('.horizonScroll2').on('scroll', function(){
+    $('.horizonScroll2').on('scroll', function() {
       checkScroll('UItab')
     });
-    $('.horizonScroll3').on('scroll', function(){
+    $('.horizonScroll3').on('scroll', function() {
       checkScroll('UXtab')
     });
-    $('.horizonScroll4').on('scroll', function(){
+    $('.horizonScroll4').on('scroll', function() {
       checkScroll('Devtab')
     });
   });
