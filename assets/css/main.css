@@ -1146,6 +1146,9 @@ Usage (In Ghost editor):
     padding-right: 1em;
   }
 
+  .tab-title-container H2 {
+    margin-right: 16px!important;
+  }
   .overview-items {
     font-weight: 400;
     font-size: 1rem;

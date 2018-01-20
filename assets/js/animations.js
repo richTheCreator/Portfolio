@@ -48,7 +48,7 @@ $(document).ready(function() {
   $(function() {
 
     function checkScroll(tabName) {
-      console.log('TABNAME----', tabName)
+      // console.log('TABNAME----', tabName)
       var $elem = $('.scrollableX');
       var newScrollLeft = $elem.scrollLeft(),
         width = $elem.width(),
@@ -56,10 +56,10 @@ $(document).ready(function() {
         offset = $(`#${tabName + ' .rt-arrow-libs'}`).width(),
         padding = 16;
 
-      console.log('width------- ', width)
-      console.log('scrollWidth------- ', scrollWidth)
-      console.log('newScrollLeft------- ', newScrollLeft)
-      console.log('offset------- ', offset)
+      // console.log('width------- ', width)
+      // console.log('scrollWidth------- ', scrollWidth)
+      // console.log('newScrollLeft------- ', newScrollLeft)
+      // console.log('offset------- ', offset)
       // current scrollPos
       var scrollPos = width + newScrollLeft + offset - padding;
 
@@ -69,7 +69,7 @@ $(document).ready(function() {
 
       // Helper fn to check if scroll is at far right
       function between(x, min, max) {
-        console.log('Is scrollPos of ', x, ' between ', min, ' and ', max, ' ?')
+        // console.log('Is scrollPos of ', x, ' between ', min, ' and ', max, ' ?')
         return x >= min && x <= max;
       }
 
@@ -78,10 +78,10 @@ $(document).ready(function() {
         // check if we are at the right-end
         $('.rt-arrow-libs').removeClass('doShow')
         $('.rt-arrow-libs').addClass('dontShowArrow')
-        console.log('between------- at right');
+        // console.log('between------- at right');
       } else if (newScrollLeft === 0) {
         // check if we are at the left-end))
-        console.log('at----- left')
+        // console.log('at----- left')
         $('.rt-arrow-libs').removeClass('dontShowArrow')
         $('.rt-arrow-libs').addClass('doShow')
       } else {

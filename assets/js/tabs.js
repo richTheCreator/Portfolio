@@ -11,7 +11,7 @@ function showTab(evt, tabName) {
 
   setTimeout(function() {
     if ($(current).hasHScrollBar()) {
-      console.log('tabClick------------ has scroll bar!')
+      // console.log('tabClick------------ has scroll bar!')
       // if a scroll bar is present, show the right arrow
       $('.rt-arrow-libs').removeClass('dontShowArrow')
       $('.rt-arrow-libs').addClass('doShow')
@@ -34,7 +34,7 @@ function showTab(evt, tabName) {
   // Get all elements with class="scrollableX" and hide them
   scrollableX = document.getElementsByClassName("scrollableX");
   for (i = 0; i < scrollableX.length; i++) {
-    console.log('FOUND------', scrollableX[i])
+    // console.log('FOUND------', scrollableX[i])
     scrollableX[i].className = scrollableX[i].className.replace("scrollableX", "");
   }
   // Determine the tab, then add the "scrollableX" class
@@ -48,7 +48,7 @@ function showTab(evt, tabName) {
         ? `#${tabName + ' .horizonScroll3'}`
         : `#${tabName + ' .horizonScroll4'}`
 
-  console.log(`selecting ------- ${currentTab}`)
+  // console.log(`selecting ------- ${currentTab}`)
   $(currentTab).addClass('scrollableX');
 
   // Get all elements with class="tabcontent" and hide them
