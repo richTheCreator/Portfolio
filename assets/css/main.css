@@ -727,11 +727,21 @@
     top: 0px;
     bottom: 0px;
     max-width: 1000px;
-    right: 8%;
+    right: 4%;
     margin: auto;
     z-index: -1;
   }
 
+  #contact svg path {
+    fill:#c9ced2;
+    opacity: .5;
+    transition:all 500ms ease;
+
+  }
+  #contact svg:hover path {
+    opacity:1;
+    transition:opacity 500ms ease;
+  }
   /*WORK STYLES*/
 
   .wrapper-work {
@@ -740,9 +750,19 @@
     overflow: visible;
     max-width: 1400px;
     margin: auto;
+    width: 100%;
+    padding: 14em 0em;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover
+  }
+
+  .coffee-title {
+    text-align: center;
+    color: #fcfcfc;
+    font-family: 'Muli';
+    font-weight: 900;
+    font-size: 4em;
   }
 
   .wrapper-desc {
@@ -1632,7 +1652,7 @@ Usage (In Ghost editor):
       height: 350px !important;
     }
     .wrapper-work {
-      padding: 7rem 0rem;
+      padding: 14rem 0rem;
     }
   }
 
@@ -1986,6 +2006,37 @@ Usage (In Ghost editor):
     .contact-form {
       padding: 0 2rem 0 2rem !important;
     }
+    .coffee-can {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 75em) {
+    /*.coffee-good {
+      width: 80%;
+      position: absolute;
+      top: inherit;
+      bottom: 0px;
+      max-width: 1000px;
+      right: 0px;
+      min-width: 500px;
+      margin: 0px;
+      z-index: -1;
+    }*/
+    .coffee-good {
+      display: none;
+    }
+    .coffee-can-lg {
+      display: none;
+    }
+    .coffee-good-mobile {
+      height: 80%;
+      margin-left: -7em;
+    }
+    .coffee-can {
+      display: flex;
+      height: 30em !important;
+    }
   }
 
   @media only screen and (min-width: 992px) and (max-width: 2560px) {
@@ -2106,6 +2157,13 @@ Usage (In Ghost editor):
       color: #2e2e2e;
       background: 0 0
     }
+    .coffee-good-mobile {
+      height: 80%;
+      margin-left: -13em;
+    }
+    .coffee-title {
+      font-size: 3em;
+    }
     .hello-sub-text {
       font-size: 2.2em;
     }
@@ -2121,7 +2179,7 @@ Usage (In Ghost editor):
     /*HEADER*/
     .wrapper-hero {
       width: 100%;
-      /*height: 100vh;*/
+      height: 80vh;
       min-height: 800px;
       padding: 1rem;
     }
