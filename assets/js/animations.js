@@ -39,10 +39,11 @@ $(document).ready(function() {
     speed: 1000
   });
 
+
   //----- ANIMATIONS WHEN IN VIEWPORT
-  $('.devices-img').addClass("dontShow").viewportChecker({classToAdd: 'doShow animated fadeInRight', offset: 1000});
-  $('.hello-sub-text, .USA, .animated-blog-post').addClass("dontShow").viewportChecker({classToAdd: 'doShow animated fadeInUp', offset: 90});
-  $('.wrapper-desc, .slick-slider, .tab-title-container, .scrollableX, .post, .tabcontent .wrapper-desc').addClass("dontShow").viewportChecker({classToAdd: 'doShow animated fadeInUp', offset: 0});
+  // $('.devices-img').addClass("dontShow").viewportChecker({classToAdd: 'doShow animated fadeInRight', offset: 1000});
+  $('.hello-sub-text, .USA, .animated-blog-post').addClass("dontShow").viewportChecker({classToAdd: 'doShow full-visible animated fadeInUp', offset: 0});
+  $('.wrapper-desc, .slick-slider, .tab-title-container, .scrollableX, .post, .tabcontent .wrapper-desc').addClass("dontShow").viewportChecker({classToAdd: 'doShow full-visible animated fadeInUp', offset: 0});
 
   //ON SCROLL FN FOR SVG ICON ROW IN WORK TABS
   $(function() {
