@@ -39,6 +39,7 @@
   </script>
   <link href="{{asset "css/flexboxgrid.min.css"}}" rel="stylesheet">
   <link href="{{asset "css/flexboxgrid_helpers.min.css"}}" rel="stylesheet">
+  <link href="{{asset "css/flexboxgrid_helpers.min.css"}}" rel="stylesheet">
   <link href="{{asset "css/animate.css"}}" rel="stylesheet">
   <link href="{{asset "css/plyr.min.css"}}" rel="stylesheet">
   <link href="{{asset "css/overlay.css"}}" rel="stylesheet">
@@ -60,7 +61,7 @@
 
     {{{body}}}
 
-      <footer class="site-footer clearfix" style="background-color:#323852">
+      <footer class="site-footer clearfix" style="background-color:#1f1f1f">
         <div class="row" style='justify-content:center'>
           <span class="USA">MADE IN 🇺🇸 WITH ☕️ & 💻</span>
         </div>
@@ -76,6 +77,7 @@
   <script type="text/javascript" src="{{asset "js/slick.min.js"}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
   <script type="text/javascript" src="{{asset "js/animations.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/typed.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/viewportchecker.min.js"}}"></script>
   {{! The main JavaScript file for Casper }}
   {{!-- <script type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script> --}}
@@ -87,6 +89,28 @@
   <script type="text/javascript" src="{{asset "js/plyr.js"}}"></script>
   <script>
     plyr.setup();
+
+      $('.rich-title').viewportChecker({
+          callbackFunction: function(){
+              $(".typed-header").typed({
+                  strings: ["Hello, my name is Richard Morales and I am a Product Designer located in Austin."],
+                  typeSpeed: 0,
+                  backDelay: 500,
+                  backSpeed: 75,
+                  loop: false,
+                  loopCount: 1,
+              });
+              $(".rich-title").typed({
+                  strings: ["Product Designer", "Developer", "Creative", "Dog lover", "Fitness Enthusiast", "Musician"],
+                  typeSpeed: 50,
+                  backDelay: 500,
+                  backSpeed: 50,
+                  loop: true,
+                  loopCount: 100,
+              });
+          },
+          offset:300,
+      });
   </script>
   {{{block "scripts"}}} {{ghost_foot}}
 
