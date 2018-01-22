@@ -704,7 +704,7 @@
     font-family: "Muli";
     font-size: 2.5em;
     padding: 0px;
-    font-weight: 700;
+    font-weight: 900;
     line-height: 1.5em;
     text-align: left;
     /* max-width: 40rem; */
@@ -719,6 +719,17 @@
     bottom: 0;
     right: 0;
     margin: auto;
+  }
+
+  .coffee-good {
+    width: 50%;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    max-width: 1000px;
+    right: 8%;
+    margin: auto;
+    z-index: -1;
   }
 
   /*WORK STYLES*/
@@ -1633,7 +1644,7 @@ Usage (In Ghost editor):
   .scrollableX {
     margin-bottom: 4rem;
     display: flex;
-    max-width: 55rem;
+    /*max-width: 55rem;*/
     padding-bottom: 1rem;
     width: 100% !important;
     justify-content: space-between;
@@ -2034,7 +2045,7 @@ Usage (In Ghost editor):
       /*max-width: 30rem;*/
     }
     .navy-devices {
-      width: 125%!important;
+      width: 125% !important;
       position: absolute;
       left: 0;
       top: -200px;
