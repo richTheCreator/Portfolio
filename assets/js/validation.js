@@ -33,34 +33,44 @@ $(document).ready(function() {
     }
   }
 
-  $('#first_name').on('input blur', function() {
+//----- FIRST NAME GROUP
+  $('#first_name').on('blur', function() {
     var input = $(this);
     var input_val = input.val();
     if (input_val) {
-      input.removeClass("invalid-form")
+      $('#first_group .bar').removeClass("invalid-form")
       formObj.first = true;
       validForm()
     } else {
-      input.addClass("invalid-form")
+      $('#first_group .bar').addClass("invalid-form")
       formObj.first = false;
       validForm()
     }
   });
+  $('#first_name').on('focus', function() {
+    $('#first_group .bar').removeClass("invalid-form")
+  });
 
-  $('#last_name').on('input blur', function() {
+  //----- LAST NAME GROUP
+  $('#last_name').on('blur', function() {
     var input = $(this);
     var input_val = input.val();
     if (input_val) {
-      input.removeClass("invalid-form")
+      $('#sec_group .bar').removeClass("invalid-form")
       formObj.last = true;
       validForm()
     } else {
-      input.addClass("invalid-form")
+      $('#sec_group .bar').addClass("invalid-form")
       formObj.last = false;
       validForm()
     }
   });
 
+  $('#last_name').on('focus', function() {
+    $('#sec_group .bar').removeClass("invalid-form")
+  });
+
+  //----- EMAIL GROUP
   $('#sender_email').on('input blur', function() {
     var input = $(this);
     var input_val = input.val();
@@ -78,25 +88,29 @@ $(document).ready(function() {
     testFunc(input_val)
 
     if (input_val && valid_email) {
-      input.removeClass("invalid-form")
+      $('#third_group .bar').removeClass("invalid-form")
       formObj.email = true;
       validForm()
     } else {
-      input.addClass("invalid-form")
+      $('#third_group .bar').addClass("invalid-form")
       formObj.email = false;
       validForm()
     }
   });
+  $('#sender_email').on('focus', function() {
+    $('#third_group .bar').removeClass("invalid-form")
+  });
+  //----- MESSAGE GROUP
 
   $('#contact_description').on('input blur', function() {
     var input = $(this);
     var input_val = input.val();
     if (input_val) {
-      input.removeClass("invalid-form")
+      $('#fourth_group .long-bar').removeClass("invalid-form")
       formObj.desc = true;
       validForm()
     } else {
-      input.addClass("invalid-form")
+      $('#fourth_group .long-bar').addClass("invalid-form")
       formObj.desc = false;
       validForm()
     }
