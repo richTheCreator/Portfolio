@@ -3,13 +3,9 @@ $('#toggle').click(function() {
 
   if(opened){
     $("#logo-fill").attr("class", "fill-toggle fill-tan");
-    $("#logo-fill-circle").attr("class", "fill-toggle fill-tan");
-    $("#logo-polyfill").attr("class", "poly-toggle fill-blue");
     opened = !opened
   }else {
     $("#logo-fill").attr("class", "fill-toggle");
-    $("#logo-fill-circle").attr("class", "fill-toggle");
-    $("#logo-polyfill").attr("class", "poly-toggle");
     opened = !opened
   }
 
@@ -28,13 +24,9 @@ $('.nav-lg-toggle').click(function() {
 
   if(opened){
     $("#logo-fill").attr("class", "fill-toggle fill-tan");
-    $("#logo-fill-circle").attr("class", "fill-toggle fill-tan");
-    $("#logo-polyfill").attr("class", "poly-toggle fill-blue");
     opened = !opened
   }else {
     $("#logo-fill").attr("class", "fill-toggle");
-    $("#logo-fill-circle").attr("class", "fill-toggle");
-    $("#logo-polyfill").attr("class", "poly-toggle");
     opened = !opened
   }
 });

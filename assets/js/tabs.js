@@ -73,3 +73,15 @@ function showTab(evt, tabName) {
   // posts = document.getElementById('post-list').className += " animatedIn"
   evt.currentTarget.className += " tab-text-selected";
 }
+
+function siteTabs(evt) {
+  var i,
+    tablinks,
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tab-text-main");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace("tab-text-selected", "");
+  }
+
+  evt.currentTarget.className += " tab-text-selected";
+}

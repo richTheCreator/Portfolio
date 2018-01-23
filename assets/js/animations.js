@@ -1,41 +1,19 @@
 $(document).ready(function() {
   //----- HELPERS
 
-  // ----- PACE LISTENER
+  // ----- PACE FULLY REMOVED LISTENER
   Pace.once('hide', function() {
     // ----- ANIMATIONS
     // Mainly header animations being triggered
     $('.device-container').addClass("dontShow").viewportChecker({classToAdd: 'doShow full-visible animated fadeInRight', offset: 0});
 
-    function1().then(function(x) {
-      console.log('promise---x', x);
-      function2().then(function(y) {
-        console.log('promise---y', y);
-      });
-    })
+    $('.hello-sub-text ').addClass("dontShow").viewportChecker({classToAdd: 'doShow full-visible animated fadeInUp', offset: 0});
 
-    function function1(param, callback) {
-      return new Promise(function(fulfill, reject) {
-        //do stuff
-        // setTimeout(function() {
-          $('.hello-sub-text ').addClass("dontShow").viewportChecker({
-            callbackFunction: function() {
-              return true
-            },
-            classToAdd: 'doShow full-visible animated fadeInUp',
-            offset: 0
-          });
-        // }, 1000);
+    // wrapped in setTimeout
+    animation2()
 
-        fulfill('FULFILLED!'); //if the action succeeded
-        reject(); //if the action did not succeed
-      });
-    }
-
-    function function2(param, callback) {
-      return new Promise(function(fulfill, reject) {
-        //do stuff
-        setTimeout(function() {
+    function animation2(param, callback) {
+      setTimeout(function() {
 
         $('.rich-title').viewportChecker({
           callbackFunction: function() {
@@ -57,36 +35,99 @@ $(document).ready(function() {
           },
           offset: 80
         });
-      }, 1500);
-
-
-        fulfill('FULFILLED---2!'); //if the action succeeded
-        reject(); //if the action did not succeed
-      });
+      }, 2000);
     }
-
-    // $.when(helloAnim).done(function(x) {
-    //   alert(x);  Alerts "123"
-    // });
 
     // ----- WAYPOINTS
     // waypoints outside of this will have the wrong heights
-    // due to the DOM not being fully rendered till after this event occcurs
+    // due to the DOM not being fully rendered till after pace event occcurs
     var nav = $('.navbar-default');
     var nav_height = nav.height();
 
+    // MAIN POSTS
     var waypoint = new Waypoint({
       element: document.getElementById('content'),
-      handler: function() {
+      handler: function(direction) {
         console.log('FIRED -  CONTENT - WAYPOINT!')
+        if (direction === 'up') {
+
+          // Get all elements with class="tablinks" and remove the class "active"
+          tablinks = document.getElementsByClassName("tab-text-main");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("tab-text-selected", "");
+          }
+          // $('#work-nav').addClass('tab-text-selected');
+        } else {
+          tablinks = document.getElementsByClassName("tab-text-main");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("tab-text-selected", "");
+          }
+          $('#work-nav').addClass('tab-text-selected');
+        }
+      }
+    })
+
+    // ABOUT SECTION
+    var waypoint = new Waypoint({
+      element: document.getElementById('about-way'),
+      handler: function(direction) {
+        if (direction === 'up') {
+          var i,
+            tablinks,
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tab-text-main");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("tab-text-selected", "");
+          }
+          $('#work-nav').addClass('tab-text-selected');
+          // document.getElementById("about-nav").click();
+          $('.navbar-default').css({'background-color': '#fff', 'transition': 'background-color 300ms ease '});
+        } else {
+          var i,
+            tablinks,
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tab-text-main");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("tab-text-selected", "");
+          }
+          // document.getElementById("work-nav").click();
+          $('.navbar-default').css({'background-color': '#ece3d8', 'transition': 'background-color 300ms ease '});
+          $('#about-nav').addClass('tab-text-selected');
+
+        }
+        console.log('ABOUT - WAYPOINT ---- ', direction)
       }
     })
     var waypoint = new Waypoint({
-      element: document.getElementById('about-way'),
-      handler: function() {
-        console.log('FIRED - ABOUT - WAYPOINT!')
+      element: document.getElementById('contact'),
+      handler: function(direction) {
+        if (direction === 'up') {
+          $('.navbar-default').css({'background-color': '#ece3d8', 'transition': 'background-color 300ms ease '});
+          // Get all elements with class="tablinks" and remove the class "active"
+          tablinks = document.getElementsByClassName("tab-text-main");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("tab-text-selected", "");
+          }
+          $('#about-nav').addClass('tab-text-selected');
+
+        } else {
+          var i,
+            tablinks,
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tab-text-main");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("tab-text-selected", "");
+          }
+          // $('#work-nav').addClass('tab-text-selected');
+
+          $('.navbar-default').css({'background-color': '#383838', 'transition': 'background-color 300ms ease '});
+
+        }
+        console.log('ABOUT - WAYPOINT ---- ', direction)
       }
     })
+
+    // END PACE
   })
 
   // check for scroll bar presence
