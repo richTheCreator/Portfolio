@@ -1,116 +1,115 @@
 @import url(http://fonts.googleapis.com/css?family=Vollkorn|Roboto);
 .toggle-button {
-  position: relative;
-  padding: 9px 10px;
-  height: 20px;
-  width: 35px;
-  cursor: pointer;
-  z-index: 3;
-  margin-bottom: 5px;
+	position: relative;
+	padding: 9px 10px;
+	height: 20px;
+	width: 35px;
+	cursor: pointer;
+	z-index: 3;
+	margin-bottom: 5px;
 }
 
-
-.bar+.bar {
-  margin-top: 6px;
+.bar + .bar {
+	margin-top: 6px;
 }
 
 .middle {
-  /*top: 11px;*/
+	/*top: 11px;*/
 }
 
 .bottom {
-  /*top: 22px;*/
+	/*top: 22px;*/
 }
 
 .toggle-button:hover {
-  opacity: .7;
+	opacity: 0.7;
 }
 
 .toggle-active .bar {
-  background-color: #fff;
+	background-color: #fff;
 }
 
 .toggle-active .top {
-  -webkit-transform: translateY(6px) translateX(0) rotate(45deg);
+	-webkit-transform: translateY(6px) translateX(0) rotate(45deg);
 }
 
 .toggle-active .middle {
-  opacity: 0;
+	opacity: 0;
 }
 
 .toggle-active .bottom {
-  -webkit-transform: translateY(-12px) translateX(0) rotate(-45deg);
+	-webkit-transform: translateY(-12px) translateX(0) rotate(-45deg);
 }
 
 .overlay {
-  position: fixed;
-  background-color: #323852;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: opacity .35s, visibility .35s, height .35s;
+	position: fixed;
+	background-color: #323852;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, visibility 0.35s, height 0.35s;
 }
 
 .nav-active {
-  opacity: 1;
-  visibility: visible;
-  height: 100%;
-  /*    max-height: 340px;*/
+	opacity: 1;
+	visibility: visible;
+	height: 100%;
+	/*    max-height: 340px;*/
 }
 
 .overlay ul {
-  display: block;
-  height: 100%;
-  position: relative;
-  top: 160px;
-  left: 0;
-  font-size: 26px;
-  list-style: none;
+	display: block;
+	height: 100%;
+	position: relative;
+	top: 160px;
+	left: 0;
+	font-size: 26px;
+	list-style: none;
 }
 
 .overlay ul li {
-  height: 50px;
-  text-align: left;
-  display: block;
-  margin-bottom: 1em;
-  /* position: relative; */
+	height: 50px;
+	text-align: left;
+	display: block;
+	margin-bottom: 1em;
+	/* position: relative; */
 }
 
 .overlay ul li a {
-  color: #dadada;
-  text-decoration: none;
-  /* text-align: left; */
-  font-family: "Muli";
-  font-weight: 900;
-  /* top: 0px; */
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  /* position: absolute; */
+	color: #dadada;
+	text-decoration: none;
+	/* text-align: left; */
+	font-family: "Muli";
+	font-weight: 900;
+	/* top: 0px; */
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	/* position: absolute; */
 }
 
 .no-scroll {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 .logo-toggle {
-  z-index: 200;
+	z-index: 200;
 }
 
 .poly-toggle {
-  fill:#FCFCFC
+	fill: #fcfcfc;
 }
 
 .fill-toggle {
-  fill:#1f1f1f
+	fill: #1f1f1f;
 }
 
 .fill-tan {
-  fill:#ECE3D8!important
+	fill: #ece3d8 !important;
 }
 
 .fill-blue {
-  fill:#323852
+	fill: #323852;
 }
