@@ -87,30 +87,11 @@
   <script type="text/javascript" src="{{asset "js/overlay.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/smoothscroll.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/plyr.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/jquery.waypoints.min.js"}}"></script>
   <script>
     plyr.setup();
 
-      $('.rich-title').viewportChecker({
-          callbackFunction: function(){
-              $(".typed-header").typed({
-                  strings: ["Hello, my name is Richard Morales and I am a Product Designer located in Austin."],
-                  typeSpeed: 0,
-                  backDelay: 500,
-                  backSpeed: 75,
-                  loop: false,
-                  loopCount: 1,
-              });
-              $(".rich-title").typed({
-                  strings: ["Product Designer", "Developer", "Creative", "Dog lover", "Fitness Enthusiast", "Musician"],
-                  typeSpeed: 50,
-                  backDelay: 500,
-                  backSpeed: 50,
-                  loop: true,
-                  loopCount: 100,
-              });
-          },
-          offset:300,
-      });
+
   </script>
   {{{block "scripts"}}} {{ghost_foot}}
 

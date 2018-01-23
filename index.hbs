@@ -2,18 +2,18 @@
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
 <header class="row middle-xs middle-md bottom-sm center-xs wrapper-hero">
-  <div class="row" style="width:100%;max-width:1400px; padding:2em">
+  <div class="row hero-container" style="width:100%;max-width:1400px; padding:2em">
     <div class="col-md-7 col-xs-12" style="padding:0; align-self:center;min-height:350px">
       <div class="wrapper-hero-text">
         <h1 class="page-title">{{@blog.title}}</h1>
         <h2 class="page-description">{{@blog.description}}</h2>
-        <h3 class='hello-sub-text'>
+        <h3 class='hello-sub-text dontShow'>
           Hello, my name is Richard Morales and I am a <span class="rich-title" style="color:#2196F3">Product Designer</span> located in Austin.
         </h3>
       </div>
     </div>
-    <div class="col-md-5 col-xs-12 start-xs device-container" style="position:relative">
-      <img src="{{asset "/images/devices-multi.png"}}" class="navy-devices" style="width:200%" alt="Responsive image">
+    <div class="col-md-5 col-xs-12 start-xs dontShow device-container" style="position:relative">
+      <img src="{{asset "/images/devices-multi2.png"}}" class="navy-devices" style="width:200%" alt="Responsive image">
     </div>
   </div>
 </header>
@@ -53,7 +53,7 @@
 </main>
 
 <div id="about" class="container-fluid container-about">
-  <div class="wrapper-work" style="background-color:transparent; padding:14rem 0rem;">
+  <div class="wrapper-work" id="about-way" style="background-color:transparent; padding:14rem 0rem;">
     <div class="row wrapper-desc">
       <hr style="color:#323852" class="dash">
       <h2 style="color:#323852" class=" section-titles no-padding">ABOUT.</h2>

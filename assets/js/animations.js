@@ -1,6 +1,94 @@
 $(document).ready(function() {
   //----- HELPERS
 
+  // ----- PACE LISTENER
+  Pace.once('hide', function() {
+    // ----- ANIMATIONS
+    // Mainly header animations being triggered
+    $('.device-container').addClass("dontShow").viewportChecker({classToAdd: 'doShow full-visible animated fadeInRight', offset: 0});
+
+    function1().then(function(x) {
+      console.log('promise---x', x);
+      function2().then(function(y) {
+        console.log('promise---y', y);
+      });
+    })
+
+    function function1(param, callback) {
+      return new Promise(function(fulfill, reject) {
+        //do stuff
+        // setTimeout(function() {
+          $('.hello-sub-text ').addClass("dontShow").viewportChecker({
+            callbackFunction: function() {
+              return true
+            },
+            classToAdd: 'doShow full-visible animated fadeInUp',
+            offset: 0
+          });
+        // }, 1000);
+
+        fulfill('FULFILLED!'); //if the action succeeded
+        reject(); //if the action did not succeed
+      });
+    }
+
+    function function2(param, callback) {
+      return new Promise(function(fulfill, reject) {
+        //do stuff
+        setTimeout(function() {
+
+        $('.rich-title').viewportChecker({
+          callbackFunction: function() {
+            $(".rich-title").typed({
+              strings: [
+                "Product Designer",
+                "Developer",
+                "Creative",
+                "Dog lover",
+                "Fitness Enthusiast",
+                "Musician"
+              ],
+              typeSpeed: 50,
+              backDelay: 500,
+              backSpeed: 50,
+              loop: true,
+              loopCount: 100
+            });
+          },
+          offset: 80
+        });
+      }, 1500);
+
+
+        fulfill('FULFILLED---2!'); //if the action succeeded
+        reject(); //if the action did not succeed
+      });
+    }
+
+    // $.when(helloAnim).done(function(x) {
+    //   alert(x);  Alerts "123"
+    // });
+
+    // ----- WAYPOINTS
+    // waypoints outside of this will have the wrong heights
+    // due to the DOM not being fully rendered till after this event occcurs
+    var nav = $('.navbar-default');
+    var nav_height = nav.height();
+
+    var waypoint = new Waypoint({
+      element: document.getElementById('content'),
+      handler: function() {
+        console.log('FIRED -  CONTENT - WAYPOINT!')
+      }
+    })
+    var waypoint = new Waypoint({
+      element: document.getElementById('about-way'),
+      handler: function() {
+        console.log('FIRED - ABOUT - WAYPOINT!')
+      }
+    })
+  })
+
   // check for scroll bar presence
   $.fn.hasHScrollBar = function() {
     return this.get(0).scrollWidth > this.innerWidth();
@@ -28,6 +116,7 @@ $(document).ready(function() {
       $('.rt-arrow-libs').addClass('dontShowArrow')
     }
   })
+
   //----- SLICK CONFIG
   $('.js-slick').slick({
     slidesToShow: 1,
@@ -39,11 +128,8 @@ $(document).ready(function() {
     speed: 1000
   });
 
-
-  //----- ANIMATIONS WHEN IN VIEWPORT
-  // $('.device-container, .coffee-good-mobile, .coffee-good').addClass("dontShow").viewportChecker({classToAdd: 'doShow animated  full-visible fadeInRight', offset: 1000});
-  $('.hello-sub-text, .USA, .animated-blog-post,.coffee-title, .form-wrapper, .contact-icons').addClass("dontShow").viewportChecker({classToAdd: 'doShow full-visible animated fadeInUp', offset: 0});
-  $('.device-container, .coffee-can').addClass("dontShow").viewportChecker({classToAdd: 'doShow full-visible animated fadeInRight', offset: 90});
+  $('.USA, .animated-blog-post,.coffee-title, .form-wrapper, .contact-icons').addClass("dontShow").viewportChecker({classToAdd: 'doShow full-visible animated fadeInUp', offset: 0});
+  $('.coffee-can').addClass("dontShow").viewportChecker({classToAdd: 'doShow full-visible animated fadeInRight', offset: 90});
   $('.wrapper-desc, .slick-slider, .tab-title-container, .scrollableX, .post, .tabcontent .wrapper-desc').addClass("dontShow").viewportChecker({classToAdd: 'doShow full-visible animated fadeInUp', offset: 0});
 
   //ON SCROLL FN FOR SVG ICON ROW IN WORK TABS
@@ -178,3 +264,37 @@ $(document).ready(function() {
     }
   }
 });
+
+// var currentHeight = 0;
+// $(window).load(function() {
+//
+//   $('.rich-title').viewportChecker({
+//     callbackFunction: function() {
+//       $(".typed-header").typed({
+//         strings: ["Hello, my name is Richard Morales and I am a Product Designer located in Austin."],
+//         typeSpeed: 0,
+//         backDelay: 500,
+//         backSpeed: 75,
+//         loop: false,
+//         loopCount: 1
+//       });
+//       $(".rich-title").typed({
+//         strings: [
+//           "Product Designer",
+//           "Developer",
+//           "Creative",
+//           "Dog lover",
+//           "Fitness Enthusiast",
+//           "Musician"
+//         ],
+//         typeSpeed: 50,
+//         backDelay: 500,
+//         backSpeed: 50,
+//         loop: true,
+//         loopCount: 100
+//       });
+//     },
+//     offset: 300
+//   });
+//
+// });
