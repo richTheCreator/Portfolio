@@ -374,6 +374,7 @@
     padding-right: 7vw;
     /*padding-bottom: 1vw;*/
     align-items: flex-end;
+    transition: background-color 2s ease 
   }
 
   .nav-anim {
@@ -2098,7 +2099,7 @@ Usage (In Ghost editor):
       padding-right: 2rem !important;
     }
     .navy-devices {
-      width: 100% !important;
+      width: 70% !important;
       position: inherit !important;
       left: 0px !important;
     }
