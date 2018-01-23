@@ -47,18 +47,52 @@ $(document).ready(function() {
     // MAIN POSTS
     var waypoint = new Waypoint({
       element: document.getElementById('content'),
-      handler: function() {
+      handler: function(direction) {
         console.log('FIRED -  CONTENT - WAYPOINT!')
+        if (direction === 'up') {
+
+          // Get all elements with class="tablinks" and remove the class "active"
+          tablinks = document.getElementsByClassName("tab-text-main");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("tab-text-selected", "");
+          }
+          // $('#work-nav').addClass('tab-text-selected');
+        } else {
+          tablinks = document.getElementsByClassName("tab-text-main");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("tab-text-selected", "");
+          }
+          $('#work-nav').addClass('tab-text-selected');
+        }
       }
     })
+
     // ABOUT SECTION
     var waypoint = new Waypoint({
       element: document.getElementById('about-way'),
       handler: function(direction) {
         if (direction === 'up') {
+          var i,
+            tablinks,
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tab-text-main");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("tab-text-selected", "");
+          }
+          $('#work-nav').addClass('tab-text-selected');
+          // document.getElementById("about-nav").click();
           $('.navbar-default').css({'background-color': '#fff', 'transition': 'background-color 300ms ease '});
         } else {
+          var i,
+            tablinks,
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tab-text-main");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("tab-text-selected", "");
+          }
+          // document.getElementById("work-nav").click();
           $('.navbar-default').css({'background-color': '#ece3d8', 'transition': 'background-color 300ms ease '});
+          $('#about-nav').addClass('tab-text-selected');
 
         }
         console.log('ABOUT - WAYPOINT ---- ', direction)
@@ -69,7 +103,23 @@ $(document).ready(function() {
       handler: function(direction) {
         if (direction === 'up') {
           $('.navbar-default').css({'background-color': '#ece3d8', 'transition': 'background-color 300ms ease '});
+          // Get all elements with class="tablinks" and remove the class "active"
+          tablinks = document.getElementsByClassName("tab-text-main");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("tab-text-selected", "");
+          }
+          $('#about-nav').addClass('tab-text-selected');
+
         } else {
+          var i,
+            tablinks,
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tab-text-main");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("tab-text-selected", "");
+          }
+          // $('#work-nav').addClass('tab-text-selected');
+
           $('.navbar-default').css({'background-color': '#383838', 'transition': 'background-color 300ms ease '});
 
         }

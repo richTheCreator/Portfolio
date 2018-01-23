@@ -12,8 +12,8 @@
       {{!-- desktop nav --}}
       <div style="flex:4; display:flex;"></div>
       <div class="hidden-xs desktop-menu">
-        <a class="nav-text nav-text-fx" href="{{@blog.url}}#content" data-letters="WORK">WORK</a>
-        <a class="nav-text nav-text-fx" href="{{@blog.url}}#about" data-letters="ABOUT">ABOUT</a>
+        <a id="work-nav" class="nav-text nav-text-fx tab-text-main" onclick="siteTabs(event)" href="{{@blog.url}}#content" data-letters="WORK">WORK</a>
+        <a id="about-nav" class="nav-text nav-text-fx tab-text-main" onclick="siteTabs(event)" href="{{@blog.url}}#about" data-letters="ABOUT">ABOUT</a>
         <div id="website">
           <a target="_blank" href="{{@blog.url}}#contact" style="margin-top:0px;" class="btn-rtc-container btn-rtc">
             CONTACT

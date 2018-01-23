@@ -374,7 +374,7 @@
     padding-right: 7vw;
     /*padding-bottom: 1vw;*/
     align-items: flex-end;
-    transition: background-color 2s ease 
+    transition: background-color 2s ease
   }
 
   .nav-anim {
@@ -458,7 +458,6 @@
     text-transform: uppercase;
     font-weight: 900;
     overflow: hidden;
-    padding: 0rem 2rem 0rem 0rem
   }
 
   .nav-text-fx::after {
@@ -510,7 +509,7 @@
     position: absolute;
     z-index: 2;
     overflow: hidden;
-    color: #1f1f1f;
+    color: #2196F3;
     white-space: nowrap;
     width: 0%;
     -webkit-transition: width 0.4s 0.3s;
