@@ -164,13 +164,13 @@
   input:focus~label, input:valid~label {
     top: -20px;
     font-size: 14px;
-    color: #5264AE;
+    color: #fcfcfc;
   }
 
   textarea:focus~label, textarea:valid~label {
     top: -20px;
     font-size: 14px;
-    color: #5264AE;
+    color: #fcfcfc;
   }
 
   @-webkit-keyframes autofill {
@@ -192,7 +192,7 @@
   }
 
   .bar {
-    background-color: #323852;
+    background-color: #616161;
     position: relative;
     display: block;
     width: 100%;
@@ -203,7 +203,7 @@
   }
 
   .long-bar {
-    background-color: #323852;
+    background-color: #616161;
     position: relative;
     display: block;
     width: 100%;
@@ -219,7 +219,7 @@
     width: 0;
     bottom: 1px;
     position: absolute;
-    background: #5264AE;
+    background: #fcfcfc;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
@@ -231,13 +231,19 @@
     /*width: 300px;*/
   }
 
+  .coffee-good-mobile {
+    height: inherit;
+    margin-left: -13em;
+    width: 100%
+  }
+
   .long-bar:before, .long-bar:after {
     content: '';
     height: 2px;
     width: 0;
     bottom: 1px;
     position: absolute;
-    background: #5264AE;
+    background: #fcfcfc;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
@@ -312,7 +318,7 @@
 
   @-webkit-keyframes inputHighlighter {
     from {
-      background: #5264AE;
+      background: #fcfcfc;
     }
     to {
       width: 0;
@@ -322,7 +328,7 @@
 
   @-moz-keyframes inputHighlighter {
     from {
-      background: #5264AE;
+      background: #fcfcfc;
     }
     to {
       width: 0;
@@ -332,7 +338,7 @@
 
   @keyframes inputHighlighter {
     from {
-      background: #5264AE;
+      background: #fcfcfc;
     }
     to {
       width: 0;
@@ -733,15 +739,16 @@
   }
 
   #contact svg path {
-    fill:#c9ced2;
+    fill: #c9ced2;
     opacity: .5;
-    transition:all 500ms ease;
+    transition: all 500ms ease;
+  }
 
-  }
   #contact svg:hover path {
-    opacity:1;
-    transition:opacity 500ms ease;
+    opacity: 1;
+    transition: opacity 500ms ease;
   }
+
   /*WORK STYLES*/
 
   .wrapper-work {
@@ -762,7 +769,8 @@
     color: #fcfcfc;
     font-family: 'Muli';
     font-weight: 900;
-    font-size: 4em;
+    font-size: 3em;
+    margin-bottom: 2em;
   }
 
   .wrapper-desc {
@@ -863,6 +871,7 @@
   .post {
     background-size: cover;
     margin-bottom: 4rem;
+    opacity:1;
     cursor: pointer;
     transition: all 500ms ease;
   }
@@ -1973,7 +1982,7 @@ Usage (In Ghost editor):
 
   .USA {
     font-size: 1em;
-    color: #ECE3D8;
+    color: #c9ced2;
     letter-spacing: 3px;
     text-align: center;
     font-family: 'Muli';
@@ -2009,6 +2018,10 @@ Usage (In Ghost editor):
     .coffee-can {
       display: none;
     }
+    .coffee-can {
+      display: flex;
+      /*height: 30em !important;*/
+    }
   }
 
   @media only screen and (max-width: 75em) {
@@ -2034,8 +2047,8 @@ Usage (In Ghost editor):
       margin-left: -7em;
     }
     .coffee-can {
-      display: flex;
-      height: 30em !important;
+      display: inherit;
+      /*height: 30em !important;*/
     }
   }
 
@@ -2081,6 +2094,11 @@ Usage (In Ghost editor):
       padding-left: 0px !important;
       padding-right: 2rem !important;
     }
+    .navy-devices {
+      width: 100% !important;
+      position: inherit !important;
+      left: 0px !important;
+    }
     .form-item {
       padding-left: 1rem !important;
     }
@@ -2096,10 +2114,10 @@ Usage (In Ghost editor):
       /*max-width: 30rem;*/
     }
     .navy-devices {
-      width: 125% !important;
-      position: absolute;
-      left: 0;
-      top: -200px;
+      width: 150% !important;
+      position: inherit !important;
+      left: -9em;
+      top: 0;
       bottom: 0;
       right: 0;
       margin: auto;
@@ -2157,9 +2175,13 @@ Usage (In Ghost editor):
       color: #2e2e2e;
       background: 0 0
     }
+    .navy-devices {
+      position: inherit !important;
+    }
     .coffee-good-mobile {
-      height: 80%;
-      margin-left: -13em;
+      height: inherit;
+      /* margin-left: -13em; */
+      width: 159%;
     }
     .coffee-title {
       font-size: 3em;
